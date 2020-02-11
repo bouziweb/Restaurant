@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <title>Document</title>
+  <style>
+     @import url(https://fonts.googleapis.com/css?family=Poiret+One);
+
+
+.contain {
+  width: 50px;
+  height: 50px;
+  margin-left: 20px;
+}
+
+.burger {
+  width: 50px;
+  height: 20px;
+  border-bottom: 15px solid #d48f11;
+  border-radius: 20%;
+  margin: 50px auto;
+  cursor: pointer;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  /* CHEESE -- Move this to its own selector for better legibility*/
+  /*&:hover{
+    & #top-bun{
+      -webkit-transform: rotate(20deg);
+      margin-top: -20px;
+      margin-left:5px;
+    }
+  }*/
+}
+.burger:before {
+  width: 47px;
+  height: 4px;
+  position: absolute;
+  content: '';
+  width: 47px;
+  height: 4px;
+  background: #ecec13;
+  border-radius: 10%;
+  margin-top: 5px;
+  margin-left: 2px;
+  z-index: 11;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  -moz-transition: all 0.3s;
+}
+.burger:after {
+  margin-top: 10px;
+  position: absolute;
+  content: '';
+  width: 45px;
+  height: 10px;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  margin-left: 2px;
+  border-radius: 15%;
+  background: #604020;
+}
+
+#lettuce-tom {
+  width: 50px;
+  height: 5px;
+  position: absolute;
+  background: -webkit-linear-gradient(left, transparent, green, transparent);
+  background: linear-gradient(left, transparent, green, transparent);
+  position: absolute;
+  margin-top: 3px;
+  z-index: 1;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  -moz-transition: all 0.3s;
+}
+#lettuce-tom:before {
+  position: absolute;
+  content: '';
+  width: 40px;
+  height: 3px;
+  background: #f20d0d;
+  margin-top: -3px;
+  margin-left: 5px;
+  border-radius: 30%;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  -moz-transition: all 0.3s;
+}
+
+/* MELTED CHEESE LINES*/
+#melt {
+  width: 7px;
+  height: 4px;
+  position: absolute;
+  background: #ecec13;
+  border-radius: 50%;
+  margin-top: 7px;
+  margin-left: 2px;
+  z-index: 11;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  -moz-transition: all 0.3s;
+}
+#melt:before {
+  position: absolute;
+  content: '';
+  width: 4px;
+  height: 6px;
+  background: #ecec13;
+  border-radius: 50%;
+  margin-left: 11px;
+  margin-top: -2px;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  -moz-transition: all 0.5s;
+}
+#melt:after {
+  position: absolute;
+  content: '';
+  width: 3px;
+  height: 6px;
+  background: #ecec13;
+  border-radius: 50%;
+  margin-left: 5px;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  -moz-transition: all 0.5s;
+}
+
+#extra-melt {
+  width: 1px;
+  height: 0px;
+  position: absolute;
+  background: #ecec13;
+  margin-left: 45px;
+  margin-top: 2px;
+  border-radius: 50%;
+  -webkit-transition: all 1s;
+  transition: all 1s;
+  -moz-transition: all 1s;
+}
+#extra-melt:before {
+  position: absolute;
+  content: '';
+  width: 2px;
+  height: 0px;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  background: #ecec13;
+  margin-left: -7px;
+}
+
+#top-bun {
+  width: 50px;
+  height: 15px;
+  position: absolute;
+  background: #d48f11;
+  z-index: 11;
+  border-radius: 50px 50px 0 0;
+  margin-top: -15px;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  -moz-transition: all 0.3s;
+}
+
+#seeds {
+  position: absolute;
+  z-index: 111;
+  width: 2px;
+  height: 4px;
+  margin-left: 22.5px;
+  background: white;
+  margin-top: 2px;
+  border-radius: 50%;
+}
+#seeds:before, #seeds:after {
+  position: absolute;
+  content: '';
+  width: 2px;
+  height: 4px;
+  border-radius: 50%;
+  background: white;
+}
+#seeds:before {
+  margin-left: -6px;
+  -webkit-transform: rotate(30deg);
+  transform: rotate(30deg);
+}
+#seeds:after {
+  margin-left: 6px;
+  -webkit-transform: rotate(-30deg);
+  transform: rotate(-30deg);
+}
+
+
+
+
+
+
+
+/*ACTIVE MENU*/
+.burger.active #top-bun {
+  margin-left: 55px;
+  margin-top: 30px;
+  -webkit-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+.burger.active:before {
+  -webkit-transform: rotate(5deg);
+  transform: rotate(5deg);
+}
+.burger.active:after {
+  margin-left: -5px;
+}
+.burger.active #melt {
+  height: 4px;
+  margin-top: 5px;
+}
+.burger.active #melt:before {
+  width: 3px;
+  margin-top: 2px;
+}
+.burger.active #melt:after {
+  width: 2px;
+  height: 11px;
+}
+.burger.active #extra-melt {
+  height: 13px;
+}
+.burger.active #extra-melt:before {
+  height: 7px;
+}
+.burger.active #lettuce-tom {
+  -webkit-transform: rotate(10deg);
+}
+.burger.active #lettuce-tom:before {
+  -webkit-transform: rotate(5deg);
+  margin-left: 13px;
+}
+
+
+
+
+  </style>
+</head>
+<body>
+  
+
+    <div class="contain">
+        <div class="burger">
+          <span id="top-bun">
+            <span id="seeds"></span>
+          </span>
+          <span id="lettuce-tom"></span>
+          <span id="melt"><span id="extra-melt"></span></span>
+        </div>
+         
+      </div>
+      
+      
+      
+</body>
+</html>
+
+<script type="text/javascript">
+  $( document ).ready(function() { 
+ 
+    
+      $(".burger").on("click", function(){
+        $(this).toggleClass("active");
+       
+      })
+  
+      });
+
+  </script>

@@ -1,0 +1,102 @@
+body{
+    background:url(../images/bg.png);
+    zoom:90%;
+}
+.section
+{
+    background-color:rgb(255, 255, 255);
+    margin-top: 30px;
+    border-radius: 20px;
+    padding: 25px;
+    
+}
+p{
+    color: rgb(32, 31, 31);
+    font-size: 15px;
+    font-family: unset;
+     margin: 0;
+}
+.card-body {
+   
+    background-color: bisque;
+}
+.text-logo
+{
+    font-family: 'Holtwood One SC', sans-serif;
+    color: #e7480f;
+    text-shadow: 2px 2px #ffd301;
+    font-size: 50px;
+    padding: 40px 0px;
+    text-align: center;
+}
+.text-logo .glyphicon
+{
+    color: #ffd301;
+    text-shadow: 0px 0px #ffd301;
+}
+
+.map-container-6{
+    overflow:hidden;
+    padding-bottom:56.25%;
+    position:relative;
+    height:0;
+    }
+    .map-container-6 iframe{
+    left:0;
+    top:0;
+    height:100%;
+    width:100%;
+    position:absolute;
+    }
+    .btn-floating i {
+        display: inline-block;
+        width: inherit;
+        text-align: center;
+        color: #fff;
+    }
+    .btn-floating i {
+        font-size: 1.25rem;
+        line-height: 47px;
+    }
+    .fas {
+        font-family: 'Font Awesome 5 Free';
+        font-weight: 900;
+    }
+    a{
+        border-radius: 50%;
+        padding: 10px;
+    }
+    a:hover {
+        text-decoration: none;
+        color: #0056b3;
+        -webkit-transition: all .2s ease-in-out;
+        -o-transition: all .2s ease-in-out;
+        transition: all .2s ease-in-out;
+    }
+    .blue.accent-1 {
+        background-color: #fd8247!important;
+    }
+    .form-header {
+        -webkit-box-shadow: 0 5px 11px 0 rgba(0,0,0,.18), 0 4px 15px 0 rgba(0,0,0,.15);
+        box-shadow: 0 5px 11px 0 rgba(0,0,0,.18), 0 4px 15px 0 rgba(0,0,0,.15);
+        color: #fff;
+        text-align: center;
+        margin-top: -3.13rem;
+        margin-bottom: 3rem;
+        padding: 1rem;
+        -webkit-border-radius: .125rem;
+        border-radius: .125rem;
+    }
+    .fas {
+        -moz-osx-font-smoothing: grayscale;
+        -webkit-font-smoothing: antialiased;
+        display: inline-block;
+        font-style: normal;
+        font-variant: normal;
+        text-rendering: auto;
+        line-height: 1;
+    }
+    .btn-light-blue {
+        background-color:  #fd8247!important;
+        color: #fff!important;
+    }

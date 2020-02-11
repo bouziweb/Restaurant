@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <title>Document</title>
+    <style>
+        
+			.menu2{z-index: 9999;
+			position: relative;}
+			
+p.menu, p.menu-burger{
+	position: fixed;
+	cursor: pointer;
+	transition: all .4s ease-in-out;
+	font-size: 32px;
+}
+p.menu{
+	top: 0;
+    right: 15px;
+    z-index: 99;
+    color: orange;
+}
+p.menu-burger{
+	top: 3%;
+    right: 43px;
+    z-index: 99;
+    color: orange;
+   
+}
+.closed{
+	transform: rotate(360deg);
+}
+.menu-screen{
+	width: 0px;
+	height: 4px;
+/* 	background: rgba(255, 255, 255, .6); */
+	background: rgb(255, 238, 0);
+	position: absolute;
+	right: 0px;
+	top: 55%;
+	transition: all .4s ease-in-out,
+		width .3s ease-in-out .3s,
+		height .5s ease-in-out .8s,
+		top .5s ease-in-out .8s;
+	z-index: 97;
+}
+.menu-content ul{
+	list-style: none;
+}
+.menu-content ul li{
+	margin-bottom: 80px;
+	color: rgb(19, 19, 19);
+	font-size: 40px;
+    cursor: pointer;
+    
+    
+}
+.menu-content ul li:first-child:hover{
+	color: #d82d27;
+}
+.menu-content ul li:nth-child(2):hover{
+	color: #a5a13e;
+}
+.menu-content ul li:nth-child(3):hover{
+	color: #feb42f;
+}
+.menu-content{
+	position: absolute;
+	width: 100%;
+	text-align: center;
+	opacity: 0;
+	transform: translateY(-250%);
+    transition:.4s, opacity .3s ease-in-out 1.5s;
+    z-index: 98;
+}
+.open{
+	width: 100%;
+	height: 100%;
+	top: 0;
+}
+.show{
+	transform: translateY(200px);
+	opacity: 1;
+}
+
+
+    </style>
+</head>
+<body>
+        
+
+        <div class="menu-content">
+                <ul>
+                    <a href="../main.php"><li>Main</li></a>
+					<a href="../index.php"><li>Menu</li></a>
+				    <a href="index.html"><li>CONTACT</li></a>
+                </ul>
+            </div>
+            <div class="menu-screen">
+            </div>
+            <p class="menu"></p>
+            <p class="menu-burger"></p>
+          
+            <div class="menu2"></div>
+    
+</body>
+</html>
+
+<script type="text/javascript">
+    $( document ).ready(function() { 
+
+        $(".menu2").load("../menu2/menu2.html");
+
+    // Add new page in my html
+    $(".menu, .menu-burger").on("click", function(){
+	$('.menu-burger').toggleClass("closed");
+	//$('.menu-burger').text() == "☰" ? $('.menu-burger').text(' ') : $('.menu-burger').text('X');
+	
+	$('.menu-screen').toggleClass('open');
+	$('.menu-content').toggleClass('show');
+    $(".menu, .menu-burger").css("color","black");
+    //////////////////////
+
+})
+    
+        });
+
+</script>
